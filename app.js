@@ -1,23 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-const parent = React.createElement("div",{
-    id : "parent"
 
-},
-[React.createElement("div",{
-    id:"child"
-},[React.createElement("h1",{},"hello"),
-React.createElement("h2",{},"hello") 
-]),
 
-React.createElement("div",{
-    id:"child"
-},[React.createElement("h1",{},"hello"),
-React.createElement("h2",{},"hello") 
-])
+const heading1 =  (
+<h1 id="hi">
+    Hello Everyone
+    </h1>
+);
 
-])
+const Header = () => {
+    return (
+        <div>
+            {heading1}
+            <h2>This is h2 tag</h2>
+            <h3>This is h3 tag</h3>
+        </div>
+    )
+}
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(parent);
+root.render(<Header />);
