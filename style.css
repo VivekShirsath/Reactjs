@@ -1,0 +1,82 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    font-family: sans-serif;
+}
+
+.app{
+    display: grid;
+    gap : 10px;
+}
+
+.header{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px;
+    background-color: orange;
+    color : white;
+    width : 100%;
+}
+
+.header img {
+    width : 70px;
+    border-radius: 10px;
+    
+}
+
+nav > ul {
+    list-style: none;
+    display : flex;
+    gap : 10px;
+    font-size: 20px;
+    letter-spacing: 1;
+}
+
+nav li {
+    cursor: pointer;
+}
+
+.cards{
+    width : 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-left: 10px;
+    border : 2px solid bisque;
+   flex-wrap: wrap;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap : 10px;
+}
+
+.cards img {
+    width : 100%;
+}
+
+.name{
+    padding : 10px;
+    font-weight: 600;
+    font-size: 22px;
+    text-align: center;
+}
+
+.cuisine{
+    padding : 10px;
+    font-weight: 500;
+
+}
+
+.ratings{
+    color : orange;
+    font-weight: 600;
+    padding : 10px;
+}
