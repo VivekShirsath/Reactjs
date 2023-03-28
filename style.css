@@ -65,7 +65,7 @@ nav li {
 .name{
     padding : 10px;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 18px;
     text-align: center;
 }
 
@@ -80,3 +80,27 @@ nav li {
     font-weight: 600;
     padding : 10px;
 }
+
+.search-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.search-input{
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border: 2px solid orange;
+}
+
+.search-btn{
+    color: white;
+    padding: 7px;
+    background-color: orange;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor : pointer
+}
+

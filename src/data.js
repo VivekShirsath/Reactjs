@@ -1,5 +1,5 @@
 
-export const restaurants = [{
+export const restaurantsList = [{
     "type": "restaurant",
     "data": {
       "type": "F",
