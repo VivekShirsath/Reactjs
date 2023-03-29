@@ -644,3 +644,5 @@ export const restaurantsList = [{
     },
     "subtype": "basic"
   }]
+
+
