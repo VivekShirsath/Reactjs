@@ -8,11 +8,12 @@
 .app{
     display: grid;
     gap : 10px;
+    width: 100vw;
 }
 
 .header{
     display : flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     padding: 4px;
     background-color: orange;
@@ -25,17 +26,33 @@
     border-radius: 10px;
     
 }
+nav{
+    display: flex;
+    flex-direction: row;
+    padding : 10px;
+}
 
 nav > ul {
     list-style: none;
     display : flex;
-    gap : 10px;
-    font-size: 20px;
+    gap : 20px;
+    font-size: 15px;
     letter-spacing: 1;
 }
 
 nav li {
     cursor: pointer;
+    font-size: 17px;
+}
+
+.log{
+    
+    color : white;
+    background-color : transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding : 5px;
+    width : 62px;
 }
 
 .cards{
@@ -46,7 +63,7 @@ nav li {
     align-items: center;
     padding: 20px;
     margin-left: 10px;
-    border : 2px solid bisque;
+    /* border : 2px solid bisque; */
    flex-wrap: wrap;
 }
 
@@ -65,20 +82,38 @@ nav li {
 .name{
     padding : 10px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
+    color : rgb(68, 66, 66);
 }
 
 .cuisine{
     text-align: center;
     font-weight: 500;
     font-size: 14px;
+    color : #686b78;
+    font-weight: 500;
+}
+
+.info{
+    width : 100%;
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    color : #535665;
+    font-weight: 300;
+    padding : 10px;
+    font-size: 14px;
+}
+
+.icon{
+    border : 2px solid transparent;
 }
 
 .ratings{
-    color : orange;
-    font-weight: 600;
-    padding : 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .search-container{
@@ -102,5 +137,156 @@ nav li {
     border-radius: 10px;
     border: 2px solid transparent;
     cursor : pointer
+}
+
+.shimmer-card{
+    width : 300px;
+    height: 297px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-left: 10px;
+    border : 2px solid bisque;
+    flex-wrap: wrap;
+    gap : 10px;
+  
+}
+
+.shimmer-img{
+    width : 230px;
+    height : 160px;
+    background-color:lightgray;
+}
+
+.shimmer-name{
+    padding : 10px;
+    background-color:lightgray;
+    width : 100%;
+    transition: 2s;
+}
+.shimmer-ratings{
+    text-align: center;
+    font-weight: 500;
+    background-color: lightgray;
+    width: 100px;
+    height: 16px;
+    }
+
+.sorting{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    width : 100vw;
+    padding: 10px;
+    text-align: center;
+}
+
+.length{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sorting-names{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.sorting-names a {
+    list-style: none;
+    color: #282c3f;
+    text-decoration: none;
+    font-size: 14px;
+    padding-right : 10px;
+}
+
+.sorting-names a:hover{
+    color : orange;
+    font-weight: 700;;
+}
+
+.menu{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_title{
+    text-align: center;
+    padding : 10px;
+    font-size: 20px;
+}
+
+.menu_info_name{
+    font-size: 1.10rem;
+    font-weight: 600;
+    color: #3e4152;
+}
+
+.menu_info_description{
+    margin-top: 14px;
+    line-height: 1.3;
+    color: rgba(40,44,63,.45);
+    width: 70%;
+    letter-spacing: -.3px;
+    font-size: 0.9rem;
+}
+
+.memu_info_price{
+    font-weight: 300;
+    color: #282c3f;
+}
+
+
+.menu_details{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width : 70%;
+    margin: 0 auto;
+    font-size: 14px;
+    padding : 10px;
+    line-height: 1.3;
+}
+
+.menu_info{
+    width : 70%;
+    line-height: 1.3;
+    padding : 10px;
+}
+
+.menu_image{
+    width : 110px;
+    height : 90px;
+    border-radius: 13px;
+}
+
+.border{
+    height: 16px;
+    border-bottom: 16px solid #f1f1f6;
+    width : 70%;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+a{
+    text-decoration: none;
+}
+
+.alt{
+    width : 110px;
+    height : 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 

@@ -1,13 +1,24 @@
 import React from "react";
-import Skeleton from 'react-loading-skeleton'
 
-
-export const Shimmer = () => {
+ const Shimmer = () => {
+   console.log("shimmer");
     return (
-        <div className = "cards">
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-    </div>
-    // )
-    )};
+        <div className = "list">
+           {Array(10)
+           .fill("")
+           .map(e => {
+           return (
+           <div className = "shimmer-card">
+            <img className = "shimmer-img"/>
+          <div className = "shimmer-name"></div>
+        <div className = "shimmer-cuisine"></div>
+        <div className = "shimmer-ratings"></div>
+           </div>
+
+           )})
+           }
+        </div>
+    )
+}
+
+export {Shimmer};
