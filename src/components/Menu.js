@@ -19,12 +19,11 @@ const Menu = () => {
     const getData = async() => {
       
             const url = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.0776598&lng=72.8837116&restaurantId="+id;
+      
             const data = await fetch(url);
-            console.log(data);
             const json = await data.json();
-           console.log(json.data.cards);
             // console.log(json?.data?.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards.slice(1));
-            if(json.data.cards.length === 3){
+            if(json?.data?.cards?.length === 3){
               setDynamicMenu(json?.data?.cards[2]?.groupedCard?.cardGroupMap.REGULAR.cards);
             }
             else{
@@ -33,17 +32,13 @@ const Menu = () => {
 
         
     }
-
-    // console.log("render");
-    // console.log(dynamicMenu);
-
-    
-    
+   
     return (!dynamicMenu) ? <Shimmer/> :(
         <div className="menu">
+          <h2>{dynamicMenu[dynamicMenu.length-1]?.card?.card?.name}</h2>
           <h3>Menu</h3>
              {dynamicMenu?.map(ele => {
-               return <MenuCard {...ele} />
+               return <MenuCard {...ele} title = {dynamicMenu[dynamicMenu.length-1]}/>
              })} 
         </div>
     )

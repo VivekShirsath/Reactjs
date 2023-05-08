@@ -1,12 +1,21 @@
+import {useState} from 'react';
+import { useCart } from "../context/cartcontext";
+
+import {Header} from './Header'
+
 
 export const MenuCard = (props) => {
-    console.log(props?.card?.card)
-    let itemsArray = props?.card?.card?.itemCards;
-    const categoryArray =props?.card?.card?.categories?.map(({title,itemCards}) =>  [title,itemCards]);
+    // console.log(props?.card?.card)
+   const {addToCart} = useCart();
+   const {cartItems} = useCart();
+   const {removeCart} = useCart();
+   let itemsArray = props?.card?.card?.itemCards;
+  const title = props.title.card.card.name;
     return (
         <>
+        <Header />
         <h3>{props.card.card.title}</h3>
-         { itemsArray?.map(({card}) => {
+         { itemsArray?.map(({card}) => { 
             return (
                 <div className= "menu_details">
                     <div className= "menu_info" key = {card.info.imageId}>
@@ -14,22 +23,35 @@ export const MenuCard = (props) => {
                         <div className= "menu_info_price">₹{card.info.price/100}</div>
                         <div className = "menu_info_description">{card.info.description}</div>
                     </div>
-                    {card.info.imageId ?<img className="menu_image" src = {"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/"+ card.info.imageId}/> : <div className = "alt" >No image</div>}
+                    
+                    <div className = "side_details">
+                    <img className="menu_image" src = {"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/"+ card.info.imageId}/>     
+                    <div className = "main_btn"> 
+                      {cartItems.find(item => item.id === card.info.id)?.quantity == null  ?
+
+                        <div className = "add"
+                        onClick = {() => {
+                            addToCart({...card.info},title) }}>
+                            Add
+                            </div> :
+                                 
+                        <div className= "plusminus">
+                            <span
+                             onClick = {() => {removeCart({...card.info})}}>
+                                -
+                                </span>
+                            <span>{cartItems.find(item => item.id === card.info.id)?.quantity}</span>
+                            <span
+                              onClick = {() => {addToCart({...card.info},title)}}
+                            >
+                                +
+                             </span></div>
+         }
+                        </div>
+                    </div>
+                    
                 </div>
-            )})
-            //     categoryArray[1]?.map(({card}) => {
-            //         return (
-            //             <div className= "menu_details">
-            //                 <div className= "menu_info" key = {card.info.imageId}>
-            //                     <div className= "menu_info_name">{card.info.name}</div>
-            //                     <div className= "menu_info_price">₹{card.info.price/100}</div>
-            //                     <div className = "menu_info_description">{card.info.description}</div>
-            //                 </div>
-            //                 {card.info.imageId ?<img className="menu_image" src = {"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/"+ card.info.imageId}/> : <div className = "alt" >No image</div>}
-            //             </div>
-            //         )})
-               
-                
+            )})    
             }
             
             <div className="border"></div>
